@@ -24,11 +24,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
+
+#include "flusspferd/object.hpp"
 #include "flusspferd/exception.hpp"
 #include "flusspferd/string.hpp"
 #include "flusspferd/root.hpp"
 #include "flusspferd/arguments.hpp"
-#include "flusspferd/object.hpp"
 #include "flusspferd/init.hpp"
 #include "flusspferd/current_context_scope.hpp"
 #include "flusspferd/spidermonkey/value.hpp"

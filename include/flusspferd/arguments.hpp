@@ -186,7 +186,8 @@ inline bool operator==(
 inline bool operator!=(arguments::iterator const &lhs,
                        arguments::iterator const &rhs)
 {
-  return !(lhs == rhs);
+	return !lhs.equals(rhs); // no idea, why this compiles on MSVC and the one below doesn't
+  //return !(lhs == rhs);
 }
 
 }

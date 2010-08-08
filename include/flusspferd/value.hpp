@@ -289,6 +289,6 @@ inline bool operator!=(value const &a, value const &b) {
 
 }
 
-#include "convert.hpp"
+//#include "convert.hpp"
 
 #endif /* FLUSSPFERD_VALUE_HPP */

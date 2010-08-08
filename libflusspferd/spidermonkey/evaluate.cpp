@@ -24,6 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 #include "flusspferd/evaluate.hpp"
+#include "flusspferd/string.hpp"
 #include "flusspferd/local_root_scope.hpp"
 #include "flusspferd/init.hpp"
 #include "flusspferd/spidermonkey/init.hpp"

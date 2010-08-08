@@ -33,7 +33,8 @@ THE SOFTWARE.
 #include "arguments.hpp"
 #include "value.hpp"
 #include "convert.hpp"
-#include "string.hpp"
+//#include "string.hpp"
+
 #include <string>
 #include <memory>
 #endif
@@ -45,6 +46,7 @@ THE SOFTWARE.
 namespace flusspferd {
 
 #ifndef PREPROC_DEBUG
+class string;
 class value;
 class context;
 class native_object_base;

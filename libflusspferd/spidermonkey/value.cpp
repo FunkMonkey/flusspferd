@@ -193,6 +193,7 @@ jsid Impl::get_jsid(Impl::value_impl const &v) {
   return id;
 }
 
+/*
 Impl::value_impl Impl::wrap_jsid(jsid id) {
   jsval value;
   if(!JS_IdToValue(Impl::current_context(), id, &value)) {
@@ -200,3 +201,4 @@ Impl::value_impl Impl::wrap_jsid(jsid id) {
   }
   return Impl::wrap_jsval(value);
 }
+*/

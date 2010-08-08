@@ -30,7 +30,7 @@ THE SOFTWARE.
 #include "value.hpp"
 #include "root.hpp"
 #include "exception.hpp"
-#include "spidermonkey/string.hpp"
+//#include "spidermonkey/string.hpp"
 #include <boost/noncopyable.hpp>
 #include <boost/utility/enable_if.hpp>
 #include <boost/type_traits/is_float.hpp>
@@ -237,7 +237,7 @@ template<>
 struct convert<std::string>;
 
 template<>
-struct convert<std::basic_string<js_char16_t> >;
+struct convert<std::basic_string<jschar> >;
 
 template<typename T>
 struct convert_ptr<T, native_object_base>;

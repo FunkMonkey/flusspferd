@@ -40,9 +40,6 @@ typedef jschar js_char16_t;
 
 namespace Impl {
 
-struct string_tag {};
-struct value_tag {};
-
 class string_impl {
   JSString *str;
 
@@ -51,11 +48,11 @@ protected:
   void set(JSString *s) { str = s; }
 
   string_impl();
-  explicit string_impl(JSString *s, string_tag) : str(s) { }
-  explicit string_impl(char const *s, string_tag);
+  explicit string_impl(JSString *s) : str(s) { }
+  explicit string_impl(char const *s);
   explicit string_impl(char const *s, std::size_t n);
   explicit string_impl(js_char16_t const *s, std::size_t n);
-  explicit string_impl(value const &v, value_tag);
+  explicit string_impl(value const &v);
 
   friend JSString *get_string(string_impl &s);
   friend string_impl wrap_string(JSString *s);
@@ -71,7 +68,7 @@ inline JSString *get_string(string_impl &s) {
 }
 
 inline string_impl wrap_string(JSString *s) {
-  return string_impl(s, string_tag());
+  return string_impl(s);
 }
 
 }

@@ -27,6 +27,7 @@ THE SOFTWARE.
 #include "flusspferd/arguments.hpp"
 #include "flusspferd/exception.hpp"
 #include "flusspferd/value.hpp"
+#include "flusspferd/object.hpp"
 #include <boost/foreach.hpp>
 #include <cassert>
 #include <js/jsapi.h>

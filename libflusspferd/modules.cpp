@@ -745,7 +745,7 @@ static array split_args_string(value const &v) {
   std::string::const_iterator i = input.begin();
   std::string::const_iterator const e = input.end();
   for(;i != e; ++i) {
-    if (!std::isspace(*i))
+    if (!isspace(*i))
       break;
   }
 
@@ -780,11 +780,11 @@ static array split_args_string(value const &v) {
           current.append(backslash_count, '\\');
           backslash_count = 0;
       }
-      if (std::isspace(*i) && !inside_quoted) {
+      if (isspace(*i) && !inside_quoted) {
           // Space outside quoted section terminate the current argument
           result.push(current);
           current.resize(0);
-          for(;i != e && std::isspace(*i); ++i)
+          for(;i != e && isspace(*i); ++i)
               ;
           --i;
       } else {

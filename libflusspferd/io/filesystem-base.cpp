@@ -39,8 +39,8 @@ THE SOFTWARE.
 
 #define access _access
 
-//int const R_OK = 04;
-//int const W_OK = 02;
+int const R_OK = 04;
+int const W_OK = 02;
 
 #else
 #include <unistd.h>
@@ -240,7 +240,7 @@ double fs_base::size(std::string const &file) {
   if (!security::get().check_path(file, security::ACCESS)) {
     throw exception(format(error_sec) % "size" % file);
   }
-  uintmax_t fsize = fs::file_size(file);
+  boost::uintmax_t fsize = fs::file_size(file);
   return fsize;
 }
 

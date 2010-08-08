@@ -24,6 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
+#include "flusspferd/object.hpp"
 #include "flusspferd/string.hpp"
 #include "flusspferd/exception.hpp"
 #include "flusspferd/spidermonkey/init.hpp"
@@ -38,7 +39,7 @@ Impl::string_impl::string_impl()
   : str(JSVAL_TO_STRING(JS_GetEmptyStringValue(Impl::current_context())))
 { }
 
-Impl::string_impl::string_impl(char const *s, string_tag)
+Impl::string_impl::string_impl(char const *s)
   : str(JS_NewStringCopyZ(Impl::current_context(), s))
 {
   if (!str)
@@ -59,7 +60,7 @@ Impl::string_impl::string_impl(js_char16_t const *s, std::size_t n)
     throw exception("Could not create string");
 }
 
-Impl::string_impl::string_impl(value const &v, value_tag)
+Impl::string_impl::string_impl(value const &v)
   : str(JS_ValueToString(Impl::current_context(),
                          Impl::get_jsval(const_cast<value&>(v))))
 {
@@ -74,7 +75,7 @@ namespace {
 }
 
 string::string() { }
-string::string(value const &v) : Impl::string_impl(v, Impl::value_tag()) { }
+string::string(value const &v) : Impl::string_impl(v) { }
 string::string(char const *s, std::size_t n)
   : Impl::string_impl(s, n ? n : std::strlen(s)) { }
 string::string(js_char16_t const *s, std::size_t n)
