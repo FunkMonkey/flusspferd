@@ -74,6 +74,13 @@ check_cxx_source_runs(
      }"
     SPIDERMONKEY_RUNS)
 
+if(NOT SPIDERMONKEY_RUNS)
+	message("ERROR: failed to run spidermonkey. \n" 
+		"Windows notice: if this is a runtime-error: " 
+			"Don't forget to add your Spidermonkey binary-directory to %PATH%. \n" 
+			"If this is a debug-build, you need to have a Spidermonkey debug-dll (due to MSVC CRT).")
+endif()
+	
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(
     Spidermonkey

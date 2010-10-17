@@ -22,7 +22,7 @@ if(FLUSSPFERD_HAVE_POSIX)
     add_definitions(-DFLUSSPFERD_HAVE_POSIX)
 endif()
 
-if(NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+if(NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD" AND NOT MSVC)
     find_package(DL REQUIRED)
     include_directories(${DL_INCLUDE_DIR})
 endif()
@@ -34,6 +34,8 @@ find_package(Iconv REQUIRED)
 if(ICONV_ACCEPTS_NONCONST_INPUT)
     add_definitions(-DICONV_ACCEPTS_NONCONST_INPUT)
 endif()
+
+include_directories(${ICONV_INCLUDE_DIR})
 
 ## Spidermonkey #############################################################
 
